@@ -1,3 +1,41 @@
 #include <iostream>
+#include <cstring>
+#include <vector>
 #include <string>
+#include <sstream>
+#include <iomanip>
+
 using namespace std;
+
+struct Obat {
+char namaObat[50];
+vector <string> keywordKeluhan;
+int stok;
+float harga;
+};
+
+class Apotek {
+private:
+vector <Obat> daftarObat;
+
+public:
+void tambahObat(const char* nama, const vector<string>& keywords, int stok, float harga){
+Obat o;
+strcpy(o.namaObat, nama);
+o.keywordKeluhan = keywords;
+o.stok = stok;
+o.harga = harga;
+daftarObat.push_back(o);
+}
+
+void tampilkanObat() {
+cout << "\n=== Daftar Obat di Apotek ===\n";
+for (const auto& o : daftarObat) {
+cout << "Nama Obat : " << o.namaObat << endl;
+cout << "Keluhan   : ";
+for (auto& kw : o.keywordKeluhan) cout << kw << " ";
+cout << "\nStok    : " << o.stok << endl;
+cout <<  fixed << setprecision(2);
+cout << "Harga     : Rp" << o.harga << "\n\n";
+}
+}

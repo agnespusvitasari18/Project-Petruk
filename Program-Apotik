@@ -138,3 +138,19 @@ int main() {
 
             apotek.tambahObat(nama, keywords, stok, harga);
             cout << "Obat berhasil ditambahkan.\n";
+            } else if (pilihan == 2){
+                tambahBanyakObat(apotek);
+            } else if (pilihan == 3) {
+                apotek.tampilkanObat();
+            } else if (pilihan == 4) {
+                char keluhan[100];
+                inputCstring(keluhan, 100, "Apa yang anda keluhkan? ");
+                apotek.rekomendasiObat(keluhan);
+            } else if (pilihan !=0) {
+                cout << "Pilihan tidak valid , coba lagi.\n";
+            }
+            } while (piihan != 0);
+            cout << "Terima kasih telah menggunakan sistem apotek NAMK.\n";
+            
+            return 0; 
+}

@@ -52,7 +52,7 @@ void rekomendasiObat(const char* keluhan) {
 cout << "\nRekomendasi Obat untuk keluhan: " << keluhan << endl;
 bool ditemukan = false;
 for (const auto& o : daftarObat){
-if (cocokanKeluhan(keluhan, o.keywordKeluhan)) {
+if (cocokkanKeluhan(keluhan, o.keywordKeluhan)) {
 cout << "_ " << o.namaObat << " | Stok: " << o.stok << " | Harga: Rp" << fixed << setprecision(2) << o.harga << endl;
 ditemukan = true;
 }
@@ -65,7 +65,7 @@ cout << "Maaf, belum ada obat yang cocok untuk keluhan ini.\n";
 
 vector<string> pecahKeyword(const string& input) {
 vector<string> hasil;
-stringtream ss(input);
+stringstream ss(input);
 string kata;
 while (ss >> kata) hasil.push_back(kata);
 return hasil;
@@ -73,18 +73,18 @@ return hasil;
 
 void inputCString(char* data, int size, const char* prompt) {
 cout << prompt;
-cin.getline(data, size):
+cin.getline(data, size);
 }
 
 void tambahBanyakObat(Apotek &apotek) {
 int jumlah;
-coout << "Berapa jumlah obat yang ingin ditambahkan? ";
+cout << "Berapa jumlah obat yang ingin ditambahkan? ";
 cin >> jumlah;
 cin.ignore();
 
 for (int i = 0; i < jumlah; ++i) {
 char nama[50];
-string keywordIput;
+string keywordInput;
 int stok;
 float harga;
 
@@ -144,7 +144,7 @@ int main() {
                 apotek.tampilkanObat();
             } else if (pilihan == 4) {
                 char keluhan[100];
-                inputCstring(keluhan, 100, "Apa yang anda keluhkan? ");
+                inputCString(keluhan, 100, "Apa yang anda keluhkan? ");
                 apotek.rekomendasiObat(keluhan);
             } else if (pilihan !=0) {
                 cout << "Pilihan tidak valid , coba lagi.\n";

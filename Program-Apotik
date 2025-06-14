@@ -104,3 +104,6 @@ apotek.tambahObat(nama, keywords, stok, harga);
 cout << "Obat ke-" << i+1  << "berhasil ditambahkan.\n";
 }
 }
+
+nesssss
+

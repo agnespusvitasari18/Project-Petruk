@@ -149,7 +149,7 @@ int main() {
             } else if (pilihan !=0) {
                 cout << "Pilihan tidak valid , coba lagi.\n";
             }
-            } while (piihan != 0);
+            } while (pilihan != 0);
             cout << "Terima kasih telah menggunakan sistem apotek NAMK.\n";
             
             return 0; 
